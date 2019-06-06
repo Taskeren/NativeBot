@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/d4294c4d6776c74dd2334485c5034e482e08335c/spigot-api-1.14.2-R0.1-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/9510ee9e311b943f158fc720d7a50820b59a6fa1/spigot-api-1.14.2-R0.1-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/TConfig/1.0/5b87c9cea241fac894987711cc4f7ee93d4605cf/TConfig-1.0-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/TConfig/1.0/7c8975f127c7606cb35ab0a8a3660963439bc139/TConfig-1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/SimpleDataStorage/1.2/a7d18ddef05b35c7f9217e5c302f18d2ad5310c7/SimpleDataStorage-1.2-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/SimpleDataStorage/1.2/3b1de173340ab6a18c5598bfaf87671193852f78/SimpleDataStorage-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.hydevelop/PicqBotX/4.10.1.928/25057cc91492b72d5642b1a5dd6ad99ed14e7fe9/PicqBotX-4.10.1.928-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.hydevelop/PicqBotX/4.10.1.928/d1bc697e081dd129f1a82b6351fd9c7e2aa9a7a6/PicqBotX-4.10.1.928.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.hydevelop/HyCommonUtils/1.3.5.130/92a9c758f3e69243bde7c0a87a3d3e987cead96c/HyCommonUtils-1.3.5.130.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.hydevelop/HyLogger/4.0.254/566bfc91981d17c4d25db2458b0a37a4a2a8c5d9/HyLogger-4.0.254-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.hydevelop/HyLogger/4.0.254/2fa9f87ad59f7b9d2eb7dedd665c1782c3fb539a/HyLogger-4.0.254.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.HyDevelop/HyCommonUtils/1.4.0.207/8aa079fcc1556bad6002281a079f5bfeff3e631d/HyCommonUtils-1.4.0.207-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.HyDevelop/HyCommonUtils/1.4.0.207/d61ddfbbde35599725c4cab9b10a549b6e01dce6/HyCommonUtils-1.4.0.207.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/cn.hutool/hutool-all/4.5.10/700c7e66a6290f3e06a47bd1b3988fd5f54b28a1/hutool-all-4.5.10-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/cn.hutool/hutool-all/4.5.10/e0e1d272ff7e35166f0c98cfa95fc37ea1a25a1c/hutool-all-4.5.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-chat/1.13-SNAPSHOT/f6a1e506014031b94aad748e1e94da617eba0c6a/bungeecord-chat-1.13-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-chat/1.13-SNAPSHOT/ab6863e2d42db5c017eafb5751d04e5eb4a27162/bungeecord-chat-1.13-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/21.0/b9ed26b8c23fe7cd3e6b463b34e54e5c6d9536d5/guava-21.0-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/21.0/3a3d111be1be1b745edfa7d91678a12d7ed38709/guava-21.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/c5b4c491aecb72e7c32a78da0b5c6b9cda8dee0f/gson-2.8.5-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/1186bcf89d33080275bab74a0b0f495af5c812ef/snakeyaml-1.23-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/ec62d74fe50689c28c0ff5b35d3aebcaa8b5be68/snakeyaml-1.23.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/f2d8698c46d1167ff24b06a840a87d91a02db891/commons-io-2.4-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/d48f964b56a931ec2712ce5d411a40d114a69753/commons-lang3-3.0-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.mariuszgromada.math/MathParser.org-mXparser/4.2.0/c55d3390da1ce786e35f907a0b9e4ebb978083f9/MathParser.org-mXparser-4.2.0-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.mariuszgromada.math/MathParser.org-mXparser/4.2.0/4e219a1d4ff1c7eb6f686d341f2d22624f27d3e0/MathParser.org-mXparser-4.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/ae5d70b49f5522a5c63abee50d9e9ad7a1cfce4e/lombok-1.14.8-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/8ac073941721e0b521ec8e8bad088b1e7b8cd332/lombok-1.14.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.fusesource.jansi/jansi/1.17.1/1f0cf35a8237c6da4583cde1b573ecfa48666e6a/jansi-1.17.1-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.fusesource.jansi/jansi/1.17.1/e90caa31c9b8d748359450d7487f76b05549ae65/jansi-1.17.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/27.0.1-jre/cb5c1119df8d41a428013289b193eba3ccaf5f60/guava-27.0.1-jre-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/27.0.1-jre/bd41a290787b5301e63929676d792c507bbc00ae/guava-27.0.1-jre.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1d064e61aad6c51cc77f9b59dc2cccc78e792f5a/failureaccess-1.0.1-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/2.5.2/ebb8ebccd42218434674f3e1d9022c13df1c19f8/checker-qual-2.5.2-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/2.5.2/cea74543d5904a30861a61b4643a5f2bb372efc4/checker-qual-2.5.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.2.0/a8cd7823aa1dcd2fd6677c0c5988fdde9d1fb0a3/error_prone_annotations-2.2.0-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.2.0/88e3c593e9b3586e1c6177f89267da6fc6986f0c/error_prone_annotations-2.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/1efdf5b737b02f9b72ebdec4f72c37ec411302ff/j2objc-annotations-1.1-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/ed28ded51a8b1c6b112568def5f4b455e6809019/j2objc-annotations-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.17/8fb5b5ad9c9723951b9fccaba5bb657fa6064868/animal-sniffer-annotations-1.17-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.17/f97ce6decaea32b36101e37979f8b647f00681fb/animal-sniffer-annotations-1.17.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>

@@ -1,0 +1,3 @@
+name: NativeBot
+main: ren.taske.nativebot.MinecraftPlugin
+version: 1.0.0

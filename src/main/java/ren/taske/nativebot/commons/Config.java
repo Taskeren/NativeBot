@@ -1,0 +1,31 @@
+package ren.taske.nativebot.commons;
+
+import TConfig.Configuration;
+
+public class Config {
+
+	public static final Configuration cfg;
+	
+	static {
+		cfg = new Configuration(Reference.FILE_CONFIGURATION);
+		refresh();
+	}
+	
+	// The Bot Constructor
+	public static int port_in;
+	public static int port_out;
+	public static String url_out;
+	public static String[] prefixes;
+	
+	public static void refresh() {
+		
+		port_in  = cfg.getInt("in",  "constructor", 25560, 0, 65535, "The port for receiving messages");
+		port_out = cfg.getInt("out", "constructor", 25561, 0, 65535, "The port for sending message to HttpApi");
+		url_out  = cfg.getString("url", "constructor", "127.0.0.1",  "The url for sending message to HttpApi");
+		prefixes = cfg.getStringList("prefixes", "constructor", new String[] {"/"}, "The prefixes of commands in Tencent");
+		
+		cfg.save();
+		
+	}
+	
+}
