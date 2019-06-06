@@ -36,7 +36,24 @@ public class UserMinecraft extends User {
 	
 	@Override
 	public void reload() {
-		
+		data.save();
+	}
+	
+	public boolean hasPermission(String node) {
+		return hasPermission(node, false);
+	}
+	
+	public boolean hasPermission(String node, boolean defaultVal) {
+		if(node != null) {
+			data.setDefault(node, defaultVal);
+			data.save();
+		}
+		return data.getBoolean(node, false);
+	}
+	
+	public void setPermission(String node, boolean val) {
+		data.setBoolean(node, val);
+		data.save();
 	}
 	
 }

@@ -8,6 +8,7 @@ import cc.moecraft.icq.command.interfaces.IcqCommand;
 import ren.taske.nativebot.bot.Bot;
 import ren.taske.nativebot.bot.command.CommandAbout;
 import ren.taske.nativebot.bot.command.CommandOperator;
+import ren.taske.nativebot.bot.command.CommandPermission;
 import ren.taske.nativebot.util.ClassUtils;
 
 public class NativeBot {
@@ -17,12 +18,12 @@ public class NativeBot {
 	@SuppressWarnings("unchecked")
 	private static final Class<IcqCommand>[] COMMAND_CLASSES = new Class[] {
 		CommandAbout.class,
-		CommandOperator.class
+		CommandOperator.class,
+		CommandPermission.class
 	};
 	
 	protected final JavaPlugin plugin;
 	protected final Bot bot;
-	
 	
 	public NativeBot(JavaPlugin plugin) {
 		this.plugin = plugin;
@@ -34,6 +35,10 @@ public class NativeBot {
 	
 	public static Logger logger() {
 		return logger;
+	}
+	
+	public Bot getBot() {
+		return this.bot;
 	}
 	
 	public void onEnable() {

@@ -17,12 +17,19 @@ public class Config {
 	public static String url_out;
 	public static String[] prefixes;
 	
+	// The Chatting Settings
+	public static long group_id;
+	public static String[] chatting_prefixes;
+	
 	public static void refresh() {
 		
 		port_in  = cfg.getInt("in",  "constructor", 25560, 0, 65535, "The port for receiving messages");
 		port_out = cfg.getInt("out", "constructor", 25561, 0, 65535, "The port for sending message to HttpApi");
 		url_out  = cfg.getString("url", "constructor", "127.0.0.1",  "The url for sending message to HttpApi");
 		prefixes = cfg.getStringList("prefixes", "constructor", new String[] {"/"}, "The prefixes of commands in Tencent");
+		
+		group_id = cfg.get("chatting", "group", "139971220").getLong(0L);
+		chatting_prefixes = cfg.getStringList("prefixes", "chatting", new String[] {"!", "\uff01"}, "The prefixes of chatting");
 		
 		cfg.save();
 		

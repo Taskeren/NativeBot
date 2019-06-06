@@ -18,7 +18,9 @@ public class CommandAbout extends CommandBase {
 				"(command with * requires OP_PERMISSION_NODE)",
 				"/about[/bot|/help] - show this notice",
 				"/op - query if you're operator",
-				"/op* [userid] - set user as operator");
+				"/op* [uid] - set user as operator",
+				"/perm* [uid] [node] - get the value of the node",
+				"/perm* [uid] [node] [true/false] - set the value of the node");
 	}
 	
 }

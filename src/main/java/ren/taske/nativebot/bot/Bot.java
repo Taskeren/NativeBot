@@ -7,6 +7,7 @@ import cc.moecraft.icq.PicqBotX;
 import cc.moecraft.icq.PicqConfig;
 import cc.moecraft.icq.command.CommandManager;
 import cc.moecraft.icq.command.interfaces.IcqCommand;
+import cc.moecraft.icq.event.IcqListener;
 import cc.moecraft.icq.sender.IcqHttpApi;
 import cc.moecraft.logger.environments.ColorSupportLevel;
 import ren.taske.nativebot.commons.Config;
@@ -47,6 +48,15 @@ public class Bot extends Thread {
 	 */
 	public void register(Collection<IcqCommand> cmds) {
 		register(cmds.toArray(new IcqCommand[0]));
+	}
+	
+	
+	/**
+	 * Add event listener for bot
+	 * @param listeners listeners
+	 */
+	public void register(IcqListener...listeners) {
+		bot.getEventManager().registerListeners(listeners);
 	}
 	
 	/**

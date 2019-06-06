@@ -40,8 +40,12 @@ public class UserTencent extends User {
 	}
 	
 	public boolean hasPermission(String node) {
+		return hasPermission(node, false);
+	}
+	
+	public boolean hasPermission(String node, boolean defaultVal) {
 		if(node != null) {
-			data.setDefault(node, false);
+			data.setDefault(node, defaultVal);
 			data.save();
 		}
 		return data.getBoolean(node, false);
