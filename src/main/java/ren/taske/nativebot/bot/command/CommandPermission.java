@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
 import ren.taske.data.util.ParseUtil;
+import ren.taske.nativebot.bot.permission.PermissionManager;
 import ren.taske.nativebot.commons.Reference;
 import ren.taske.nativebot.core.profile.UserTencent;
 import ren.taske.nativebot.util.MessageUtils;
@@ -32,7 +33,12 @@ public class CommandPermission extends CommandBase {
 				UserTencent u = UserTencent.of(userid);
 				
 				if(args.size() == 2) {
-					message = nodename + " = " + u.hasPermission(nodename);
+					boolean exists = PermissionManager.has(nodename);
+					if(exists) {
+						message = nodename + " = " + u.hasPermission(nodename);
+					} else {
+						message = nodename + " is NOT registered!";
+					}
 				}
 				
 				if(args.size() > 2) {

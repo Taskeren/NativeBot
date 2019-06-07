@@ -47,8 +47,13 @@ public class NativeBot {
 		for(String cmd : bot.getCommands()) logger.info("[C] "+cmd);
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void onDisable() {
-		
+		try {
+			bot.stop();
+		} catch(Exception e) {
+			logger.warning(e.getMessage());
+		}
 	}
 	
 }

@@ -40,7 +40,7 @@ public class Chatting {
 			return;
 		}
 		
-		if(!ut.hasPermission(NODE_CHATTING_TENCENT, true)) {
+		if(!ut.hasPermission(NODE_CHATTING_TENCENT)) {
 			evt.respond(MessageLib.getUnauthorizedMessage(user));
 			return;
 		}
@@ -74,7 +74,14 @@ public class Chatting {
 			return;
 		}
 		
-		if(!um.hasPermission(NODE_CHATTING_MINECRAFT, true)) {
+		if(um.getTencentId() == -1L) {
+			evt.getPlayer().sendMessage("Please set your Tencent userid first!");
+			return;
+		}
+		
+		UserTencent ut = UserTencent.of(um.getTencentId());
+		
+		if(!ut.hasPermission(NODE_CHATTING_MINECRAFT)) {
 			evt.getPlayer().sendMessage("You're Unauthorized!");
 			return;
 		}

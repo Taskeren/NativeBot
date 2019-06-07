@@ -10,6 +10,8 @@ import cc.moecraft.icq.command.interfaces.IcqCommand;
 import cc.moecraft.icq.event.IcqListener;
 import cc.moecraft.icq.sender.IcqHttpApi;
 import cc.moecraft.logger.environments.ColorSupportLevel;
+import ren.taske.nativebot.bot.permission.Permission;
+import ren.taske.nativebot.bot.permission.PermissionManager;
 import ren.taske.nativebot.commons.Config;
 
 public class Bot extends Thread {
@@ -64,6 +66,8 @@ public class Bot extends Thread {
 	 * But wait! Did you {@code register} the commands?
 	 */
 	public void run() {
+		PermissionManager.init();
+		Permission.lock();
 		bot.startBot();
 	}
 	

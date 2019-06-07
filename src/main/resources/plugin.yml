@@ -1,3 +1,10 @@
 name: NativeBot
 main: ren.taske.nativebot.MinecraftPlugin
 version: 1.0.0
+
+commands:
+  qq:
+    description: set your qq userid
+    usage: /qq <QQNumber> [MinecraftName]
+    permission: nativebot.qq
+    permission-message: You don't have permission!

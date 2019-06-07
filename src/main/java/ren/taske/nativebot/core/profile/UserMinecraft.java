@@ -56,4 +56,17 @@ public class UserMinecraft extends User {
 		data.save();
 	}
 	
+	public static final String _TENCENT_UID = "tencent.uid";
+	
+	public void setTencentId(long uid) {
+		data.setLong(_TENCENT_UID, uid);
+		data.save();
+	}
+	
+	public long getTencentId() {
+		data.setDefault(_TENCENT_UID, -1L);
+		data.save();
+		return data.getLong(_TENCENT_UID, -1L);
+	}
+	
 }

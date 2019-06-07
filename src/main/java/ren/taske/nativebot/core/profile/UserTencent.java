@@ -3,6 +3,7 @@ package ren.taske.nativebot.core.profile;
 import java.util.HashMap;
 
 import ren.taske.data.SimpleDataStorage;
+import ren.taske.nativebot.bot.permission.Permission;
 import ren.taske.nativebot.commons.Reference;
 
 public class UserTencent extends User {
@@ -11,9 +12,20 @@ public class UserTencent extends User {
 	
 	protected final SimpleDataStorage data;
 	
+	public static final UserTencent NONE = new UserTencent(-1L) {
+		@Override
+		public boolean hasPermission(String node) {
+			return false;
+		}
+	};
+	
 	private UserTencent(long userid) {
 		super(Long.toString(userid));
 		data = new SimpleDataStorage(Reference.getTencentProfile(userid));
+	}
+	
+	static {
+		PROFILES.put(-1L, NONE);
 	}
 	
 	public static UserTencent of(long userid) {
@@ -40,15 +52,13 @@ public class UserTencent extends User {
 	}
 	
 	public boolean hasPermission(String node) {
-		return hasPermission(node, false);
-	}
-	
-	public boolean hasPermission(String node, boolean defaultVal) {
-		if(node != null) {
-			data.setDefault(node, defaultVal);
+		Permission perm = Permission.of(node);
+		if(perm != null) {
+			data.setDefault(node, perm.getDefault());
 			data.save();
+			return data.getBoolean(node, false);
 		}
-		return data.getBoolean(node, false);
+		return false;
 	}
 	
 	public void setPermission(String node, boolean val) {

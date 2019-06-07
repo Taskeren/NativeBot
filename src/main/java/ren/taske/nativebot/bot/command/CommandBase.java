@@ -29,10 +29,10 @@ public abstract class CommandBase implements EverywhereCommand {
 	@Override
 	public String run(EventMessage event, User sender, String command, ArrayList<String> args) {
 		long userid = sender.getId();
-		if(node == null || node.equals("") || UserTencent.of(userid).hasPermission(node) || UserTencent.of(userid).hasPermission(Reference.NODE_OP)) {
+		if(node == null || node.equals("") || UserTencent.of(userid).hasPermission(Reference.NODE_OP) || UserTencent.of(userid).hasPermission(node)) {
 			return execute(event, sender, userid, command, args);
 		} else {
-			return MessageLib.getUnauthorizedMessage(sender);
+			return MessageLib.getUnauthorizedMessage(sender)+"CB";
 		}
 	}
 	
