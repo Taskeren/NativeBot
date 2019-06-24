@@ -22,6 +22,8 @@ public class MinecraftPlugin extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		nativebotJavaPlugin = this;
+		
 		nativebot.onEnable();
 		
 		getCommand("qq").setExecutor(cmdqq);
@@ -48,5 +50,7 @@ public class MinecraftPlugin extends JavaPlugin {
 	public void onMinecraftMessage(AsyncPlayerChatEvent evt) {
 		chatting.onMinecraftMessage(evt);
 	}
+	
+	public static JavaPlugin nativebotJavaPlugin;
 	
 }

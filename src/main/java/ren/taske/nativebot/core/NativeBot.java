@@ -4,22 +4,18 @@ import java.util.logging.Logger;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import cc.moecraft.icq.command.interfaces.IcqCommand;
 import ren.taske.nativebot.bot.Bot;
-import ren.taske.nativebot.bot.command.CommandAbout;
-import ren.taske.nativebot.bot.command.CommandOperator;
-import ren.taske.nativebot.bot.command.CommandPermission;
 import ren.taske.nativebot.util.ClassUtils;
 
 public class NativeBot {
 
 	protected static Logger logger;
 	
-	@SuppressWarnings("unchecked")
-	private static final Class<IcqCommand>[] COMMAND_CLASSES = new Class[] {
-		CommandAbout.class,
-		CommandOperator.class,
-		CommandPermission.class
+	private static final String[] COMMANDS = new String[] {
+			"CommandAbout",
+			"CommandOperator",
+			"CommandPermission",
+			"CommandConsole"
 	};
 	
 	protected final JavaPlugin plugin;
@@ -42,7 +38,7 @@ public class NativeBot {
 	}
 	
 	public void onEnable() {
-		bot.register(ClassUtils.instantiate(COMMAND_CLASSES));
+		bot.register(ClassUtils.instantiate(COMMANDS));
 		bot.start();
 		for(String cmd : bot.getCommands()) logger.info("[C] "+cmd);
 	}
@@ -54,6 +50,20 @@ public class NativeBot {
 		} catch(Exception e) {
 			logger.warning(e.getMessage());
 		}
+	}
+	
+	public static void bigWarning(String str, Object...format) {
+		logger.warning("***********************************************");
+		logger.warning(String.format(str, format));
+		logger.warning("***********************************************");
+	}
+	
+	public static void bigWarning(String[] strs, Object...format) {
+		String s = "";
+		for(String str : strs) {
+			s += str + "\n";
+		}
+		bigWarning(s, format);
 	}
 	
 }
