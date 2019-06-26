@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
+import cn.glycol.t18n.I18n;
 import ren.taske.data.util.ParseUtil;
 import ren.taske.nativebot.bot.permission.PermissionManager;
 import ren.taske.nativebot.commons.Reference;
@@ -20,40 +21,41 @@ public class CommandPermission extends CommandBase {
 	public String execute(EventMessage evt, User user, long userid, String command, ArrayList<String> args) {
 		String message = "";
 		if(args.size() < 2) {
-			message = "Wrong Arguments!";
+			message = I18n.format("command.common.argument");
 		}
 		if(args.size() >= 2) {
 			String username = args.get(0);
 			String nodename = args.get(1);
 			
-			Long uid = ParseUtil.parseLong(username);
+			Long uid;
+			
+			if(username.equals("*")) {
+				uid = userid;
+			} else {
+				uid = ParseUtil.parseLong(username);
+			}
 			
 			if(uid != null) {
 				
-				UserTencent u = UserTencent.of(userid);
+				UserTencent u = UserTencent.of(uid);
+				boolean exists = PermissionManager.has(nodename);
 				
-				if(args.size() == 2) {
-					boolean exists = PermissionManager.has(nodename);
-					if(exists) {
-						message = nodename + " = " + u.hasPermission(nodename);
-					} else {
-						message = nodename + " is NOT registered!";
+				if(exists) {
+					if(args.size() == 2) {
+						message = I18n.format("command.permission.query", u.getUserId(), nodename, u.hasPermission(nodename));
 					}
-				}
-				
-				if(args.size() > 2) {
-					boolean value = ParseUtil.parseBoolean(args.get(2));
-					u.setPermission(nodename, value);
 					
-					StringBuffer sb = new StringBuffer();
-					sb.append(nodename).append("(").append(uid).append(")");
-					sb.append(" set to ").append(value);
-					
-					message = sb.toString();
+					if(args.size() > 2) {
+						boolean value = ParseUtil.parseBoolean(args.get(2));
+						u.setPermission(nodename, value);
+						message = I18n.format("command.permission.set", u.getUserId(), nodename, value);
+					}
+				} else {
+					message = I18n.format("command.permission.unregistered");
 				}
 				
 			} else {
-				message = "NumberFormatException!";
+				message = I18n.format("command.common.exception.math");
 			}
 			
 		}

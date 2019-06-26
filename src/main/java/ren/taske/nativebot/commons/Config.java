@@ -21,6 +21,9 @@ public class Config {
 	public static long group_id;
 	public static String[] chatting_prefixes;
 	
+	// I18n Settings
+	public static boolean useJarLanguageFile;
+	
 	public static void refresh() {
 		
 		port_in  = cfg.getInt("in",  "constructor", 25560, 0, 65535, "The port for receiving messages");
@@ -30,6 +33,8 @@ public class Config {
 		
 		group_id = cfg.get("chatting", "group", "139971220").getLong(0L);
 		chatting_prefixes = cfg.getStringList("prefixes", "chatting", new String[] {"!", "\uff01"}, "The prefixes of chatting");
+		
+		useJarLanguageFile = cfg.getBoolean("lang_refresh", "lang", false, "True if want use the language file in jar");
 		
 		cfg.save();
 		

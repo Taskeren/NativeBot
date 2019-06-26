@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
+import cn.glycol.t18n.I18n;
 import ren.taske.data.util.ParseUtil;
 import ren.taske.nativebot.core.profile.UserTencent;
 import ren.taske.nativebot.util.MessageLib;
@@ -25,7 +26,11 @@ public class CommandOperator extends CommandBase {
 		/* Mode: check */
 		if(args.size() == 0) {
 			boolean perm = u.hasPermission(OP_PERM_NODE);
-			message = "You're "+(perm?"an operator!":"not an operator");
+			if(perm) {
+				message = I18n.format("command.operator.yeap");
+			} else {
+				message = I18n.format("command.operator.nope");
+			}
 		}
 		
 		/* Mode: set */
@@ -38,13 +43,13 @@ public class CommandOperator extends CommandBase {
 					// Check if has OP_PERM_NODE
 					if(u2.hasPermission(OP_PERM_NODE)) {
 						u2.setPermission(OP_PERM_NODE, false);
-						message = "["+uid+"] now is NOT operator!";
+						message = I18n.format("command.operator.change.nope", uid);
 					} else {
 						u2.setPermission(OP_PERM_NODE, true);
-						message = "["+uid+"] now is operator!";
+						message = I18n.format("command.operator.change.yeap", uid);
 					}
 				} else {
-					message = "NumberFormatException!";
+					message = I18n.format("command.common.exception.math");
 				}
 			} else {
 				// Unauthorized

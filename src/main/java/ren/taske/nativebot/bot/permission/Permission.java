@@ -22,6 +22,11 @@ public class Permission {
 		this.def  = def;
 	}
 	
+	/**
+	 * <code>null</code>, if locked and un-registered
+	 * @param name
+	 * @return
+	 */
 	public static Permission of(String name) {
 		return of(name, false);
 	}

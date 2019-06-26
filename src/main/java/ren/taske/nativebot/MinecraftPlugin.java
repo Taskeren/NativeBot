@@ -1,17 +1,21 @@
 package ren.taske.nativebot;
 
+import java.util.logging.Logger;
+
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import cc.moecraft.icq.event.events.message.EventMessage;
+import cn.glycol.t18n.I18n;
 import ren.taske.nativebot.bot.chatting.Chatting;
 import ren.taske.nativebot.bot.chatting.MinecraftMessage;
 import ren.taske.nativebot.bot.chatting.TencentMessage;
 import ren.taske.nativebot.core.NativeBot;
+import ren.taske.nativebot.i18n.I18nInit;
 import ren.taske.nativebot.minecraft.command.CommandQQ;
 
 public class MinecraftPlugin extends JavaPlugin {
-
+	
 	protected final NativeBot nativebot = new NativeBot(this);
 	protected final Chatting chatting = new Chatting(this);
 	
@@ -23,6 +27,10 @@ public class MinecraftPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		nativebotJavaPlugin = this;
+		
+		I18nInit.init();
+		
+		getLogger().info(I18n.format("message.common.welcome"));
 		
 		nativebot.onEnable();
 		
@@ -52,5 +60,9 @@ public class MinecraftPlugin extends JavaPlugin {
 	}
 	
 	public static JavaPlugin nativebotJavaPlugin;
+	
+	public static Logger logger() {
+		return nativebotJavaPlugin.getLogger();
+	}
 	
 }

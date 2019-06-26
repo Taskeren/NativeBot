@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import ren.taske.data.SimpleDataStorage;
 import ren.taske.nativebot.bot.permission.Permission;
+import ren.taske.nativebot.bot.permission.PermissionManager;
 import ren.taske.nativebot.commons.Reference;
 
 public class UserTencent extends User {
@@ -12,6 +13,7 @@ public class UserTencent extends User {
 	
 	protected final SimpleDataStorage data;
 	
+	/** 错误的用户，用于给 UserMinecraft 提供未绑定的用户 */
 	public static final UserTencent NONE = new UserTencent(-1L) {
 		@Override
 		public boolean hasPermission(String node) {
@@ -62,8 +64,10 @@ public class UserTencent extends User {
 	}
 	
 	public void setPermission(String node, boolean val) {
-		data.setBoolean(node, val);
-		data.save();
+		if(PermissionManager.has(node)) {
+			data.setBoolean(node, val);
+			data.save();
+		}
 	}
 	
 }

@@ -27,7 +27,7 @@
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/d4294c4d6776c74dd2334485c5034e482e08335c/spigot-api-1.14.2-R0.1-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/9510ee9e311b943f158fc720d7a50820b59a6fa1/spigot-api-1.14.2-R0.1-SNAPSHOT.jar">
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/cccf9ead0e83de2bc2cc6c8a1ece9a76570ced0c/spigot-api-1.14.2-R0.1-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/org.spigotmc/spigot-api/1.14.2-R0.1-SNAPSHOT/c3e1b7c24c243bd4c1564c68a174e9a6d201a8e3/spigot-api-1.14.2-R0.1-SNAPSHOT.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
@@ -38,6 +38,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/SimpleDataStorage/1.2/a7d18ddef05b35c7f9217e5c302f18d2ad5310c7/SimpleDataStorage-1.2-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/SimpleDataStorage/1.2/3b1de173340ab6a18c5598bfaf87671193852f78/SimpleDataStorage-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/T18n/1.1/3159ef858efdfa1afcf25e076ecf8579439d2979/T18n-1.1-sources.jar" kind="lib" path="C:/Users/Taskeren/.gradle/caches/modules-2/files-2.1/com.github.nitu2003/T18n/1.1/8dd2ca39a45a83f7c3061e7ede473a29987d63b8/T18n-1.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>

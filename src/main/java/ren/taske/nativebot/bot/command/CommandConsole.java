@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
+import cn.glycol.t18n.I18n;
 import ren.taske.nativebot.MinecraftPlugin;
 import ren.taske.nativebot.commons.Reference;
 
@@ -24,12 +25,12 @@ public class CommandConsole extends CommandBase {
 		String cmd = merge(args);
 		Boolean flag = callSyncDispatch(Bukkit.getServer().getConsoleSender(), cmd);
 		if(flag == null) {
-			return "Exception!";
+			return I18n.format("command.common.exception");
 		}
 		if(flag) {
-			message = "Done!";
+			message = I18n.format("command.common.done");
 		} else {
-			message = "Fail!";
+			message = I18n.format("command.common.fail");
 		}
 		return message;
 	}
@@ -47,6 +48,7 @@ public class CommandConsole extends CommandBase {
 			return Bukkit.getScheduler().callSyncMethod(MinecraftPlugin.nativebotJavaPlugin, new Callable<Boolean>() {
 				@Override
 				public Boolean call() throws Exception {
+					MinecraftPlugin.logger().info("[$] "+command);
 					return Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
 				}
 			}).get();
