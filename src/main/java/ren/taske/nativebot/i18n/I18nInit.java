@@ -27,6 +27,10 @@ public class I18nInit {
 	
 	public static void init() {
 		
+		if(FILE_I18N.exists() && Config.useJarLanguageFile) {
+			FILE_I18N.delete();
+		}
+		
 		if(!FILE_I18N.exists() || Config.useJarLanguageFile) {
 			writeContextToFile(getContextFromJar());
 		}

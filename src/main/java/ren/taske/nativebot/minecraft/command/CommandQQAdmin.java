@@ -6,32 +6,23 @@ import org.bukkit.command.CommandSender;
 
 import cn.glycol.t18n.I18n;
 import ren.taske.data.util.ParseUtil;
-import ren.taske.nativebot.MinecraftPlugin;
 import ren.taske.nativebot.core.profile.UserMinecraft;
 
-public class CommandQQ implements CommandExecutor {
+public class CommandQQAdmin implements CommandExecutor {
 
-	protected final MinecraftPlugin plugin;
-	
-	public CommandQQ(MinecraftPlugin plugin) {
-		this.plugin = plugin;
-	}
-	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		
-		if(args.length == 1) {
-			UserMinecraft um = UserMinecraft.of(sender.getName());
+		if(args.length == 2) {
 			Long qqid = ParseUtil.parseLong(args[0]);
+			
 			if(qqid != null) {
-				if(um.getTencentId() == -1L) {
-					um.setTencentId(qqid);
-					sender.sendMessage(I18n.format("command.qq.done", qqid));
-				} else {
-					sender.sendMessage(I18n.format("command.qq.undone", um.getTencentId()));
-				}
+				UserMinecraft oped = UserMinecraft.of(args[1]);
+				oped.setTencentId(qqid);
+				sender.sendMessage(I18n.format("command.qq-admin.done", oped.getUserId(), oped.getTencentId()));
 				return true;
 			}
+			
 		}
 		
 		return false;

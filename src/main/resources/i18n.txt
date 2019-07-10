@@ -4,6 +4,11 @@ message.using.set-qq-first=请先绑定QQ！
 
 message.unauthorized=您没有权限！
 
+command.qq.done=您的账号绑定了QQ：%s。
+command.qq.undone=您的账号已经绑定了QQ：%s。
+
+command.qq-admin.done=%1$s的账号绑定了QQ：%2$s。
+
 command.common.done=完成！
 command.common.fail=失败！
 command.common.argument=参数错误！

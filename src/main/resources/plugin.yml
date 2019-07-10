@@ -4,7 +4,21 @@ version: 1.0.0
 
 commands:
   qq:
-    description: set your qq userid
-    usage: /qq <QQNumber> [MinecraftName]
+    description: to set your qq userid
+    usage: /qq <QQNumber>
     permission: nativebot.qq
     permission-message: You don't have permission!
+  qq-admin:
+    description: to set a player's qq userid
+    usage: /qq-admin <QQNumber> [MinecraftUser]
+    aliases: [qqadmin]
+    permission: nativebot.admin
+    permission-message: You don't have permission!
+
+permissions:
+  nativebot.admin:
+    description: A permission node used for command qq-admin
+    default: op
+  nativebot.qq:
+    description: A permission node used for command qq
+    default: true

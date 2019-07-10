@@ -13,6 +13,7 @@ import ren.taske.nativebot.bot.chatting.TencentMessage;
 import ren.taske.nativebot.core.NativeBot;
 import ren.taske.nativebot.i18n.I18nInit;
 import ren.taske.nativebot.minecraft.command.CommandQQ;
+import ren.taske.nativebot.minecraft.command.CommandQQAdmin;
 
 public class MinecraftPlugin extends JavaPlugin {
 	
@@ -23,6 +24,7 @@ public class MinecraftPlugin extends JavaPlugin {
 	protected final TencentMessage tencentevent = new TencentMessage(this);
 	
 	protected final CommandQQ cmdqq = new CommandQQ(this);
+	protected final CommandQQAdmin cmdqqadmin = new CommandQQAdmin();
 	
 	@Override
 	public void onEnable() {
@@ -35,6 +37,7 @@ public class MinecraftPlugin extends JavaPlugin {
 		nativebot.onEnable();
 		
 		getCommand("qq").setExecutor(cmdqq);
+		getCommand("qq-admin").setExecutor(cmdqqadmin);
 		
 		nativebot.getBot().register(tencentevent);
 		getServer().getPluginManager().registerEvents(mcevent, this);

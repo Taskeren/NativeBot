@@ -2,6 +2,8 @@ package ren.taske.nativebot.bot.chatting;
 
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import cc.moecraft.icq.event.events.message.EventGroupMessage;
+import cc.moecraft.icq.event.events.message.EventGroupOrDiscussMessage;
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
 import cc.moecraft.icq.utils.CQUtils;
@@ -35,7 +37,13 @@ public class Chatting {
 		long userid = user.getId();
 		UserTencent ut = UserTencent.of(userid);
 		String message = evt.getMessage();
-		String username = user.getInfo().getNickname();
+		String username;
+		
+		if(evt instanceof EventGroupOrDiscussMessage) {
+			username = ((EventGroupOrDiscussMessage) evt).getGroupSender().getInfo().getCard();
+		} else {
+			username = user.getInfo().getNickname();
+		}
 		
 		if(!isPrefixed(message)) {
 			return;
