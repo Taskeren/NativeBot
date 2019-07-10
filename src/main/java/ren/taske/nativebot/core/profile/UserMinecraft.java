@@ -21,52 +21,52 @@ public class UserMinecraft extends User {
 			UserMinecraft user = new UserMinecraft(userid);
 			PROFILES.put(userid, user);
 		}
-		return PROFILES.get(userid);	
+		return PROFILES.get(userid);
 	}
 	
 	@Override
 	public SimpleDataStorage getData() {
-		return data;
+		return getTencentUser().getData();
 	}
 	
 	@Override
 	public void onUnload() {
-		data.save();
+		getTencentUser().onUnload();
 	}
 	
 	@Override
 	public void reload() {
-		data.save();
+		getTencentUser().reload();
 	}
 	
+	/** 获取玩家对应QQ的权限 */
 	public boolean hasPermission(String node) {
-		return hasPermission(node, false);
+		return getTencentUser().hasPermission(node);
 	}
 	
-	public boolean hasPermission(String node, boolean defaultVal) {
-		if(node != null) {
-			data.setDefault(node, defaultVal);
-			data.save();
-		}
-		return data.getBoolean(node, false);
-	}
-	
+	/** 设置玩家对应QQ的权限 */
 	public void setPermission(String node, boolean val) {
-		data.setBoolean(node, val);
-		data.save();
+		getTencentUser().setPermission(node, val);
 	}
 	
 	public static final String _TENCENT_UID = "tencent.uid";
 	
+	/** 设置该用户的QQ号 */
 	public void setTencentId(long uid) {
 		data.setLong(_TENCENT_UID, uid);
 		data.save();
 	}
 	
+	/** 获取该用户的QQ号 */
 	public long getTencentId() {
 		data.setDefault(_TENCENT_UID, -1L);
 		data.save();
 		return data.getLong(_TENCENT_UID, -1L);
+	}
+	
+	/** 获取该用户的TencentUser */
+	public UserTencent getTencentUser() {
+		return UserTencent.of(getTencentId());
 	}
 	
 }

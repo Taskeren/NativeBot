@@ -5,6 +5,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
 import cc.moecraft.icq.utils.CQUtils;
+import cn.glycol.t18n.I18n;
 import ren.taske.nativebot.MinecraftPlugin;
 import ren.taske.nativebot.commons.Config;
 import ren.taske.nativebot.core.NativeBot;
@@ -51,7 +52,7 @@ public class Chatting {
 			message = CQUtils.removeCqCode(message);
 			
 			StringBuffer sb = new StringBuffer();
-			sb.append("<").append(username).append("> ").append("\u00a7r");
+			sb.append("<").append(username).append("> ").append("\u00a7r"); // \u007a = §
 			sb.append(message);
 			
 			plugin.getServer().broadcastMessage(sb.toString());
@@ -75,14 +76,14 @@ public class Chatting {
 		}
 		
 		if(um.getTencentId() == -1L) {
-			evt.getPlayer().sendMessage("Please set your Tencent userid first!");
+			evt.getPlayer().sendMessage(I18n.format("message.using.set-qq-first"));
 			return;
 		}
 		
 		UserTencent ut = UserTencent.of(um.getTencentId());
 		
 		if(!ut.hasPermission(NODE_CHATTING_MINECRAFT)) {
-			evt.getPlayer().sendMessage("You're Unauthorized!");
+			evt.getPlayer().sendMessage(I18n.format("message.unauthorized"));
 			return;
 		}
 		

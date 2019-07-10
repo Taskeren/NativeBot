@@ -1,5 +1,9 @@
 message.common.welcome=欢迎使用！
 
+message.using.set-qq-first=请先绑定QQ！
+
+message.unauthorized=您没有权限！
+
 command.common.done=完成！
 command.common.fail=失败！
 command.common.argument=参数错误！

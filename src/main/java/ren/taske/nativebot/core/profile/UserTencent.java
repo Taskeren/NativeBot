@@ -69,5 +69,4 @@ public class UserTencent extends User {
 			data.save();
 		}
 	}
-	
 }
