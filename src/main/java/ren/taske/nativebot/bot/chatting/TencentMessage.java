@@ -3,13 +3,13 @@ package ren.taske.nativebot.bot.chatting;
 import cc.moecraft.icq.event.EventHandler;
 import cc.moecraft.icq.event.IcqListener;
 import cc.moecraft.icq.event.events.message.EventMessage;
-import ren.taske.nativebot.MinecraftPlugin;
+import ren.taske.nativebot.NativeBotPlugin;
 
 public class TencentMessage extends IcqListener {
 
-	protected final MinecraftPlugin plugin;
+	protected final NativeBotPlugin plugin;
 	
-	public TencentMessage(MinecraftPlugin plugin) {
+	public TencentMessage(NativeBotPlugin plugin) {
 		this.plugin = plugin;
 	}
 	

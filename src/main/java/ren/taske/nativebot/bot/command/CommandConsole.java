@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
 import cn.glycol.t18n.I18n;
-import ren.taske.nativebot.MinecraftPlugin;
+import ren.taske.nativebot.NativeBotPlugin;
 import ren.taske.nativebot.commons.Reference;
 
 public class CommandConsole extends CommandBase {
@@ -45,10 +45,10 @@ public class CommandConsole extends CommandBase {
 	
 	public static Boolean callSyncDispatch(CommandSender sender, String command) {
 		try {
-			return Bukkit.getScheduler().callSyncMethod(MinecraftPlugin.nativebotJavaPlugin, new Callable<Boolean>() {
+			return Bukkit.getScheduler().callSyncMethod(NativeBotPlugin.nativebotJavaPlugin, new Callable<Boolean>() {
 				@Override
 				public Boolean call() throws Exception {
-					MinecraftPlugin.logger().info("[$] "+command);
+					NativeBotPlugin.logger().info("[$] "+command);
 					return Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
 				}
 			}).get();

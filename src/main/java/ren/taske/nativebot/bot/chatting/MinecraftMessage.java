@@ -4,13 +4,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import ren.taske.nativebot.MinecraftPlugin;
+import ren.taske.nativebot.NativeBotPlugin;
 
 public class MinecraftMessage implements Listener {
 
-	protected final MinecraftPlugin plugin;
+	protected final NativeBotPlugin plugin;
 	
-	public MinecraftMessage(MinecraftPlugin plugin) {
+	public MinecraftMessage(NativeBotPlugin plugin) {
 		this.plugin = plugin;
 	}
 	

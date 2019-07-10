@@ -6,14 +6,14 @@ import org.bukkit.command.CommandSender;
 
 import cn.glycol.t18n.I18n;
 import ren.taske.data.util.ParseUtil;
-import ren.taske.nativebot.MinecraftPlugin;
+import ren.taske.nativebot.NativeBotPlugin;
 import ren.taske.nativebot.core.profile.UserMinecraft;
 
 public class CommandQQ implements CommandExecutor {
 
-	protected final MinecraftPlugin plugin;
+	protected final NativeBotPlugin plugin;
 	
-	public CommandQQ(MinecraftPlugin plugin) {
+	public CommandQQ(NativeBotPlugin plugin) {
 		this.plugin = plugin;
 	}
 	

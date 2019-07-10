@@ -8,7 +8,7 @@ import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
 import cc.moecraft.icq.utils.CQUtils;
 import cn.glycol.t18n.I18n;
-import ren.taske.nativebot.MinecraftPlugin;
+import ren.taske.nativebot.NativeBotPlugin;
 import ren.taske.nativebot.commons.Config;
 import ren.taske.nativebot.core.NativeBot;
 import ren.taske.nativebot.core.profile.UserMinecraft;
@@ -17,10 +17,10 @@ import ren.taske.nativebot.util.MessageLib;
 
 public class Chatting {
 
-	protected final MinecraftPlugin plugin;
+	protected final NativeBotPlugin plugin;
 	protected final NativeBot nativebot;
 	
-	public Chatting(MinecraftPlugin plugin) {
+	public Chatting(NativeBotPlugin plugin) {
 		this.plugin = plugin;
 		this.nativebot = plugin.getBot();
 	}
