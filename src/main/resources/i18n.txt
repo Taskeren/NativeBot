@@ -7,16 +7,13 @@ command.common.exception=错误！
 command.common.exception.math=数字转换错误（NumberFormatException）！
 command.common.unauthorized=无权执行！
 
-# '$' as new line
-# Yes, sir!
-# (command with * requires OP_PERMISSION_NODE)
-# /about[/bot|/help] - show this notice
-# /op - query if you're operator
-# /op* [uid] - set user as operator
-# /perm* [uid] [node] - get the value of the node
-# /perm* [uid] [node] [true/false] - set the value of the node
-# /console* [cmd] - to execute command as Console
-command.about.message=Yes, sir!$(command with * requires OP_PERMISSION_NODE)$/about[/bot|/help] - show this notice$/op - query if you're operator$/op* [uid] - set user as operator$/perm* [uid] [node] - get the value of the node$/perm* [uid] [node] [true/false] - set the value of the node$/console* [cmd] - to execute command as Console
+command.about.message.0=Yes, sir!
+command.about.message.1=(command with * requires OP_PERMISSION_NODE)
+command.about.message.2=/about[/bot|/help] - show this notice
+command.about.message.3=/op - query if you're operator$/op* [uid] - set user as operator
+command.about.message.4=/perm* [uid] [node] - get the value of the node
+command.about.message.5=/perm* [uid] [node] [true/false] - set the value of the node
+command.about.message.6=/console* [cmd] - to execute command as Console
 
 command.operator.yeap=您是管理员！
 command.operator.nope=您不是管理员！
