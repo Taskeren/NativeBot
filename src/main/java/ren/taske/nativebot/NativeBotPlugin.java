@@ -10,6 +10,7 @@ import cn.glycol.t18n.I18n;
 import ren.taske.nativebot.bot.chatting.Chatting;
 import ren.taske.nativebot.bot.chatting.MinecraftMessage;
 import ren.taske.nativebot.bot.chatting.TencentMessage;
+import ren.taske.nativebot.bot.listener.ServerLoadEventListener;
 import ren.taske.nativebot.core.NativeBot;
 import ren.taske.nativebot.i18n.I18nInit;
 import ren.taske.nativebot.minecraft.command.CommandQQ;
@@ -22,6 +23,8 @@ public class NativeBotPlugin extends JavaPlugin {
 	
 	protected final MinecraftMessage mcevent = new MinecraftMessage(this);
 	protected final TencentMessage tencentevent = new TencentMessage(this);
+	
+	protected final ServerLoadEventListener botstartevent = new ServerLoadEventListener();
 	
 	protected final CommandQQ cmdqq = new CommandQQ(this);
 	protected final CommandQQAdmin cmdqqadmin = new CommandQQAdmin();
@@ -41,6 +44,9 @@ public class NativeBotPlugin extends JavaPlugin {
 		
 		nativebot.getBot().register(tencentevent);
 		getServer().getPluginManager().registerEvents(mcevent, this);
+		
+		getServer().getPluginManager().registerEvents(botstartevent, this);
+		
 		super.onEnable();
 	}
 	
@@ -62,7 +68,7 @@ public class NativeBotPlugin extends JavaPlugin {
 		chatting.onMinecraftMessage(evt);
 	}
 	
-	public static JavaPlugin nativebotJavaPlugin;
+	public static NativeBotPlugin nativebotJavaPlugin;
 	
 	public static Logger logger() {
 		return nativebotJavaPlugin.getLogger();

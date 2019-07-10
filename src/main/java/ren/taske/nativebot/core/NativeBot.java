@@ -41,7 +41,6 @@ public class NativeBot {
 	public void onEnable() {
 		bot.register(ClassUtils.instantiate(COMMANDS));
 		handleRegistrationEvent();
-		bot.start();
 		for(String cmd : bot.getCommands()) logger.info("[C] "+cmd);
 	}
 	
@@ -50,6 +49,11 @@ public class NativeBot {
 	 */
 	void handleRegistrationEvent() {
 		EventBotRegistration.newEventAndCall(getBot());
+	}
+	
+	/** 启动机器人 */
+	public void start() {
+		bot.start();
 	}
 	
 	@SuppressWarnings("deprecation")
