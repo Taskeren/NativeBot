@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import ren.taske.nativebot.bot.Bot;
+import ren.taske.nativebot.bot.event.EventBotRegistration;
 import ren.taske.nativebot.util.ClassUtils;
 
 public class NativeBot {
@@ -39,8 +40,16 @@ public class NativeBot {
 	
 	public void onEnable() {
 		bot.register(ClassUtils.instantiate(COMMANDS));
+		handleRegistrationEvent();
 		bot.start();
 		for(String cmd : bot.getCommands()) logger.info("[C] "+cmd);
+	}
+	
+	/**
+	 * 发布一个 EventBotRegistration 事件
+	 */
+	void handleRegistrationEvent() {
+		EventBotRegistration.newEventAndCall(getBot());
 	}
 	
 	@SuppressWarnings("deprecation")
