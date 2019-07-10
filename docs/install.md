@@ -12,7 +12,7 @@
 1. 启动一次酷Q，启用这个插件，然后关掉酷Q。（如果启动正常的话，应该会有一个黑色窗口出现）
 1. 进到`/data/app/io.github.richardchien.coolqhttpapi/`中，新建`config.cfg`。
 1. 向这个配置文件中填入如下文本：
-```
+```properties
 [general]
 host=0.0.0.0
 port=插件里配置的发送消息到酷Q的端口号

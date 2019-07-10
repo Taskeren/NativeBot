@@ -41,10 +41,21 @@ ut.setPermission("chatting.minecraft", true); // 传入权限名称和设置的�
 boolean isAuthorized = ut.getPermission("chatting.tencent"); // 传入权限名称
 ```
 
-#### 2. 注册一个权限
-注册权限目前只能抢在机器人启动前注册，将来会开发事件系统用于注册。
-
+#### 2. 注册机器人指令，机器人监听器，机器人权限
+新建一个 Bukkit 的监听类，然后监听 EventBotRegistration 事件。
 ```java
-boolean isAdded = Permission.add("test"); // 传入权限名称，返回是否被注册
-boolean addedYet = Permission.add("test.yes", true); // 传入权限名称和权限默认值，返回是否被注册。多用于默认给予的权限，比如 chatting.minecraft 和 chatting.tencent。
+public class RegistrationListener implements Listener {
+
+    public RegistrationListener() {
+        Bukkit.getServer().getPluginManager().registerEvents(this, PLUGIN);
+    }
+
+    @EventHandler
+    public void onRegistrationEvent(EventBotRegistration evt) {
+        evt.registerCommand(commands); // 注册指令
+        evt.registerListeners(listeners); // 注册监听器
+        evt.registerPermission(permissions); // 注册权限
+    }
+
+}
 ```
