@@ -1,5 +1,6 @@
 package ren.taske.nativebot.bot.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerLoadEvent;
@@ -19,7 +20,10 @@ public class ServerLoadEventListener implements Listener {
 		}
 		
 		if(type == LoadType.RELOAD) {
-			
+			Bukkit.getServer().shutdown();
+			System.err.println("Don't try to reload NativeBot");
+			System.err.println("NativeBot CANNOT support reloading.");
+			System.err.println("不要尝试重载NativeBot，这个插件不能重载！");
 		}
 		
 	}
