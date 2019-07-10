@@ -15,7 +15,7 @@ import ren.taske.nativebot.i18n.I18nInit;
 import ren.taske.nativebot.minecraft.command.CommandQQ;
 import ren.taske.nativebot.minecraft.command.CommandQQAdmin;
 
-public class MinecraftPlugin extends JavaPlugin {
+public class NativeBotPlugin extends JavaPlugin {
 	
 	protected final NativeBot nativebot = new NativeBot(this);
 	protected final Chatting chatting = new Chatting(this);
