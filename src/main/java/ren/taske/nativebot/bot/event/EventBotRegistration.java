@@ -6,7 +6,7 @@ import org.bukkit.event.HandlerList;
 
 import cc.moecraft.icq.command.interfaces.IcqCommand;
 import cc.moecraft.icq.event.IcqListener;
-import ren.taske.nativebot.bot.Bot;
+import cn.glycol.extrabot.bot.MixinBot;
 import ren.taske.nativebot.bot.permission.PermissionManager;
 
 /**
@@ -23,25 +23,25 @@ public class EventBotRegistration extends Event {
 		return handlers;
 	}
 	
-	protected final Bot bot;
+	protected final MixinBot bot;
 	
-	public EventBotRegistration(Bot bot) {
+	public EventBotRegistration(MixinBot bot) {
 		this.bot = bot;
 	}
 	
 	/** 获取机器人 */
-	public Bot getBot() {
+	public MixinBot getBot() {
 		return bot;
 	}
 	
 	/** 注册指令 */
-	public void registerCommands(IcqCommand...cmds) {
-		bot.register(cmds);
+	public void registerCommands(IcqCommand command) {
+		bot.addCommand(command);
 	}
 	
 	/** 注册事件监听器 */
-	public void registerListeners(IcqListener...listeners) {
-		bot.register(listeners);
+	public void registerListeners(IcqListener listener) {
+		bot.addEventListenr(listener);
 	}
 	
 	/** 注册权限 */
@@ -59,7 +59,7 @@ public class EventBotRegistration extends Event {
 	 * 千万不要瞎jb调用它！
 	 * @return 返回结果
 	 */
-	public static EventBotRegistration newEventAndCall(Bot bot) {
+	public static EventBotRegistration newEventAndCall(MixinBot bot) {
 		EventBotRegistration evt = new EventBotRegistration(bot);
 		Bukkit.getServer().getPluginManager().callEvent(evt);
 		return evt;

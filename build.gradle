@@ -30,6 +30,7 @@ repositories {
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 dependencies {
+	implementation 'com.github.nitu2003:ExtraBot:v1.0p3'
 	implementation 'com.github.nitu2003:TConfig:1.0'
 	implementation 'com.github.nitu2003:SimpleDataStorage:1.2'
 	implementation 'com.github.nitu2003:T18n:1.3'

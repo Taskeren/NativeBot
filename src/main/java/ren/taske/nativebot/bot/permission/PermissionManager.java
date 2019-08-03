@@ -29,7 +29,7 @@ public class PermissionManager {
 		return !(Permission.of(node) == null);
 	}
 	
-	// Add defaults
+	// 注册权限节点
 	public static void init() {
 		
 		add(Reference.NODE_OP);
@@ -38,5 +38,4 @@ public class PermissionManager {
 		add(Chatting.NODE_CHATTING_MINECRAFT, true);
 		
 	}
-	
 }

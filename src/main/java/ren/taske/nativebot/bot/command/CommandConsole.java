@@ -45,10 +45,10 @@ public class CommandConsole extends CommandBase {
 	
 	public static Boolean callSyncDispatch(CommandSender sender, String command) {
 		try {
-			return Bukkit.getScheduler().callSyncMethod(NativeBotPlugin.nativebotJavaPlugin, new Callable<Boolean>() {
+			return Bukkit.getScheduler().callSyncMethod(NativeBotPlugin.getPlugin(), new Callable<Boolean>() {
 				@Override
 				public Boolean call() throws Exception {
-					NativeBotPlugin.logger().info("[$] "+command);
+					NativeBotPlugin.logger().log("[$] %s", command);
 					return Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
 				}
 			}).get();

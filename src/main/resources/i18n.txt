@@ -23,6 +23,7 @@ command.about.message.3=/op - query if you're operator$/op* [uid] - set user as 
 command.about.message.4=/perm* [uid] [node] - get the value of the node
 command.about.message.5=/perm* [uid] [node] [true/false] - set the value of the node
 command.about.message.6=/console* [cmd] - to execute command as Console
+command.about.message.7=/list - to list all the online players
 
 command.operator.yeap=您是管理员！
 command.operator.nope=您不是管理员！
@@ -32,4 +33,7 @@ command.operator.change.nope=[%s]现在不是管理员了！
 command.permission.query=[%s]的%s权限状态为%s。
 command.permission.set=成功设置[%s]的%s权限状态为%s。
 command.permission.unregistered=莫得这种权限，你在抓梦jio？
+
+command.list.title=[List]
+command.list.prefix=* %s
 

@@ -2,7 +2,6 @@ package ren.taske.nativebot.bot.chatting;
 
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import cc.moecraft.icq.event.events.message.EventGroupMessage;
 import cc.moecraft.icq.event.events.message.EventGroupOrDiscussMessage;
 import cc.moecraft.icq.event.events.message.EventMessage;
 import cc.moecraft.icq.user.User;
@@ -10,6 +9,7 @@ import cc.moecraft.icq.utils.CQUtils;
 import cn.glycol.t18n.I18n;
 import ren.taske.nativebot.NativeBotPlugin;
 import ren.taske.nativebot.commons.Config;
+import ren.taske.nativebot.core.BotApi;
 import ren.taske.nativebot.core.NativeBot;
 import ren.taske.nativebot.core.profile.UserMinecraft;
 import ren.taske.nativebot.core.profile.UserTencent;
@@ -105,7 +105,7 @@ public class Chatting {
 			sb.append("\uff3b").append(username).append("\uff3d ");
 			sb.append(message);
 			
-			plugin.getBot().getBot().sendGroupMessage(Config.group_id, sb.toString());
+			BotApi.sendGroupMessage(Config.group_id, sb.toString());
 			
 		}
 		
