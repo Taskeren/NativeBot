@@ -45,5 +45,8 @@ shadowJar {
 	from("./") {
 		include 'build.gradle'
 	}
+	manifest {
+		attributes "Main-Class":"ren.taske.nativebot.Main"
+	}
 }
 

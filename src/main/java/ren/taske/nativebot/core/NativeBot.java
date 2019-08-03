@@ -78,18 +78,4 @@ public class NativeBot {
 		bot.startBot();
 	}
 	
-	public static void bigWarning(String str, Object...format) {
-		logger.warning("***********************************************");
-		logger.warning(String.format(str, format));
-		logger.warning("***********************************************");
-	}
-	
-	public static void bigWarning(String[] strs, Object...format) {
-		String s = "";
-		for(String str : strs) {
-			s += str + "\n";
-		}
-		bigWarning(s, format);
-	}
-	
 }
