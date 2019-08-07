@@ -56,7 +56,10 @@ public class Chatting {
 		
 		if(isPrefixed(message)) {
 			
-			message = removePrefix(message);
+			if(shouldSubstring(message)) {
+				message = removePrefix(message);
+			}
+			
 			message = CQUtils.removeCqCode(message);
 			
 			StringBuffer sb = new StringBuffer();
@@ -97,7 +100,9 @@ public class Chatting {
 		
 		if(isPrefixed(message)) {
 			
-			message = removePrefix(message);
+			if(shouldSubstring(message)) {
+				message = removePrefix(message);
+			}
 			
 			evt.setMessage(message);
 			
@@ -118,6 +123,11 @@ public class Chatting {
 			if(message.startsWith(prefix)) return true;
 		}
 		return false;
+	}
+	
+	public static boolean shouldSubstring(String message) {
+		if(!Config.require_prefix) return false;
+		return true;
 	}
 	
 	public static String removePrefix(String message) {
