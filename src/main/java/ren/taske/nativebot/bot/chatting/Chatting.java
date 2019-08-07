@@ -112,6 +112,8 @@ public class Chatting {
 	}
 	
 	public static boolean isPrefixed(String message) {
+		if(!Config.require_prefix) return true;
+		
 		for(String prefix : Config.chatting_prefixes) {
 			if(message.startsWith(prefix)) return true;
 		}

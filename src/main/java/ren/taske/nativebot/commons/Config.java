@@ -20,6 +20,7 @@ public class Config {
 	// The Chatting Settings
 	public static long group_id;
 	public static String[] chatting_prefixes;
+	public static boolean require_prefix;
 	
 	// I18n Settings
 	public static boolean useJarLanguageFile;
@@ -33,6 +34,7 @@ public class Config {
 		
 		group_id = cfg.get("chatting", "group", "139971220").getLong(0L);
 		chatting_prefixes = cfg.getStringList("prefixes", "chatting", new String[] {"!", "\uff01"}, "The prefixes of chatting");
+		require_prefix = cfg.getBoolean("require_prefiex", "chatting", true, "Should the message to re-sent start with prefixes");
 		
 		useJarLanguageFile = cfg.getBoolean("lang_refresh", "lang", false, "True if want use the language file in jar");
 		
