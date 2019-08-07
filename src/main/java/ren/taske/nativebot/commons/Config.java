@@ -34,7 +34,7 @@ public class Config {
 		
 		group_id = cfg.get("chatting", "group", "139971220").getLong(0L);
 		chatting_prefixes = cfg.getStringList("prefixes", "chatting", new String[] {"!", "\uff01"}, "The prefixes of chatting");
-		require_prefix = cfg.getBoolean("require_prefiex", "chatting", true, "Should the message to re-sent start with prefixes");
+		require_prefix = cfg.getBoolean("require_prefixes", "chatting", true, "Should the message to re-sent start with prefixes");
 		
 		useJarLanguageFile = cfg.getBoolean("lang_refresh", "lang", false, "True if want use the language file in jar");
 		
