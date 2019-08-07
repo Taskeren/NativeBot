@@ -28,9 +28,11 @@ public class Chatting {
 	public static final String NODE_CHATTING_TENCENT = "chatting.tencent";
 	public static final String NODE_CHATTING_MINECRAFT = "chatting.minecraft";
 	
+	public static final String FORMAT_CODE = "\u00a7";
+	
 	/**
 	 * To handle messages from Tencent
-	 * @param evt PicqBotX message event
+	 * $param evt PicqBotX message event
 	 */
 	public void onTencentMessage(EventMessage evt) {
 		User user = evt.getSender();
@@ -45,36 +47,23 @@ public class Chatting {
 			username = user.getInfo().getNickname();
 		}
 		
-		if(!isPrefixed(message)) {
-			return;
-		}
+		Message msg = new Message(message);
 		
+		// 检查消息前缀
+		if(!msg.available()) return;
+		
+		// 检查QQ号权限
 		if(!ut.hasPermission(NODE_CHATTING_TENCENT)) {
 			evt.respond(MessageLib.getUnauthorizedMessage(user));
 			return;
 		}
 		
-		if(isPrefixed(message)) {
-			
-			if(shouldSubstring(message)) {
-				message = removePrefix(message);
-			}
-			
-			message = CQUtils.removeCqCode(message);
-			
-			StringBuffer sb = new StringBuffer();
-			sb.append("<").append(username).append("> ").append("\u00a7r"); // \u007a = §
-			sb.append(message);
-			
-			plugin.getServer().broadcastMessage(sb.toString());
-			
-		}
-		
+		plugin.getServer().broadcastMessage(replaces(Config.chattingFormatMinecraft, username, message));
 	}
 	
 	/**
 	 * To handle messages from Minecraft
-	 * @param evt Minecraft chatting event
+	 * $param evt Minecraft chatting event
 	 */
 	public void onMinecraftMessage(AsyncPlayerChatEvent evt) {
 		
@@ -82,56 +71,78 @@ public class Chatting {
 		String username = evt.getPlayer().getName();
 		UserMinecraft um = UserMinecraft.of(username);
 		
-		if(!isPrefixed(message)) {
-			return;
-		}
+		Message msg = new Message(message);
 		
+		// 检查消息前缀
+		if(!msg.available()) return;
+		
+		// 检查QQ号绑定
 		if(um.getTencentId() == -1L) {
 			evt.getPlayer().sendMessage(I18n.format("message.using.set-qq-first"));
 			return;
 		}
 		
+		// 检查QQ号权限
 		UserTencent ut = UserTencent.of(um.getTencentId());
-		
 		if(!ut.hasPermission(NODE_CHATTING_MINECRAFT)) {
 			evt.getPlayer().sendMessage(I18n.format("message.unauthorized"));
 			return;
 		}
 		
-		if(isPrefixed(message)) {
-			
-			if(shouldSubstring(message)) {
-				message = removePrefix(message);
+		evt.setMessage(msg.content());
+		BotApi.sendGroupMessage(Config.group_id, replaces(Config.chattingFormatTencent, username, message));
+	}
+	
+	public static String replaces(String format, String username, String message) {
+		return format.replace("$PLAYER$", username).replace("$MESSAGE$", message).replace("&", FORMAT_CODE);
+	}
+	
+	public static class Message {
+		
+		protected String message;
+		protected boolean available;
+		
+		public Message(String message) {
+			this.message = message;
+			check();
+		}
+		
+		/**
+		 * 检查，并移除前缀
+		 */
+		void check() {
+			if(Config.require_prefix) {
+				String prefix = getPrefix();
+				if(prefix != null) {
+					available = true;
+					message.substring(prefix.length());
+				}
 			}
-			
-			evt.setMessage(message);
-			
-			StringBuffer sb = new StringBuffer();
-			sb.append("\uff3b").append(username).append("\uff3d ");
-			sb.append(message);
-			
-			BotApi.sendGroupMessage(Config.group_id, sb.toString());
-			
+			else if(message.startsWith("/")) {
+				return;
+			}
+			else {
+				available = true;
+			}
 		}
 		
-	}
-	
-	public static boolean isPrefixed(String message) {
-		if(!Config.require_prefix) return true;
-		
-		for(String prefix : Config.chatting_prefixes) {
-			if(message.startsWith(prefix)) return true;
+		public boolean available() {
+			return available;
 		}
-		return false;
-	}
-	
-	public static boolean shouldSubstring(String message) {
-		if(!Config.require_prefix) return false;
-		return true;
-	}
-	
-	public static String removePrefix(String message) {
-		return message.length() < 1 ? "" : message.substring(1);
+		
+		public String content() {
+			return CQUtils.removeCqCode(message);
+		}
+		
+		private String getPrefix() {
+			for(String p : Config.chatting_prefixes) {
+				if(message.startsWith(p)) {
+					return p;
+				}
+			}
+			return null;
+		}
+		
 	}
 	
 }

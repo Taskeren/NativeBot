@@ -25,6 +25,10 @@ public class Config {
 	// I18n Settings
 	public static boolean useJarLanguageFile;
 	
+	// The Chatting Formatter
+	public static String chattingFormatTencent;
+	public static String chattingFormatMinecraft;
+	
 	public static void refresh() {
 		
 		port_in  = cfg.getInt("in",  "constructor", 25560, 0, 65535, "The port for receiving messages");
@@ -37,6 +41,9 @@ public class Config {
 		require_prefix = cfg.getBoolean("require_prefixes", "chatting", true, "Should the message to re-sent start with prefixes");
 		
 		useJarLanguageFile = cfg.getBoolean("lang_refresh", "lang", false, "True if want use the language file in jar");
+		
+		chattingFormatTencent   = cfg.getString("formatTencent", "format", "\uff3b$PLAYER$\uff3d $MESSAGE$", "The format of the message to Tencent");
+		chattingFormatMinecraft = cfg.getString("formatMinecraft", "format", "<$PLAYER$> $MESSAGE$", "The format of the message to Minecraft");
 		
 		cfg.save();
 		
