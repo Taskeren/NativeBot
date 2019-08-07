@@ -1,6 +1,7 @@
 package ren.taske.nativebot.bot.chatting;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
@@ -14,7 +15,7 @@ public class MinecraftMessage implements Listener {
 		this.plugin = plugin;
 	}
 	
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void message(AsyncPlayerChatEvent evt) {
 		plugin.onMinecraftMessage(evt);
 	}
